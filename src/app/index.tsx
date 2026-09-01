@@ -1,14 +1,14 @@
-import React, { useState } from 'react';
+import { useRouter } from 'expo-router';
+import { useState } from 'react';
 import {
-  StyleSheet,
-  Text,
-  View,
   Image,
-  TouchableOpacity,
   SafeAreaView,
   StatusBar,
+  StyleSheet,
+  Text,
+  TouchableOpacity,
+  View,
 } from 'react-native';
-import { useRouter } from 'expo-router';
 
 export default function Onboarding() {
   const [pageIndex, setPageIndex] = useState(0);
