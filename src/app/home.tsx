@@ -3,7 +3,6 @@ import { useRouter } from 'expo-router';
 import { useState } from 'react';
 import {
   Image,
-  Platform,
   SafeAreaView,
   ScrollView,
   StyleSheet,
@@ -108,13 +107,15 @@ export default function HomeScreen() {
 const styles = StyleSheet.create({
   mainWrapper: { 
     flex: 1, 
-    backgroundColor: '#FAFAFA' 
+    backgroundColor: '#FAFAFA',
+    alignItems: 'center' // ওয়েবে সমস্ত কন্টেন্ট মাঝখানে সারিবদ্ধ রাখার জন্য
   },
   container: { 
     flex: 1, 
-    paddingHorizontal: Platform.OS === 'web' ? 40 : 20, // ওয়েবে ৪০ এবং মোবাইলে ২০ প্যাডিং থাকবে
+    paddingHorizontal: 20, 
     paddingTop: 40,
     width: '100%',
+    maxWidth: 600, // ওয়েবে কন্টেন্ট যেন পুরো ডিসপ্লেতে ছড়িয়ে না যায়
     position: 'relative'
   },
   header: { 
@@ -149,8 +150,8 @@ const styles = StyleSheet.create({
   bottomNav: { 
     position: 'absolute', 
     bottom: 20, 
-    left: Platform.OS === 'web' ? 40 : 20, 
-    right: Platform.OS === 'web' ? 40 : 20, 
+    left: 20, 
+    right: 20, 
     height: 60, 
     backgroundColor: '#0066FF', 
     borderRadius: 30, 
