@@ -3,6 +3,7 @@ import { useRouter } from 'expo-router';
 import { useState } from 'react';
 import {
   Image,
+  Platform,
   SafeAreaView,
   ScrollView,
   StyleSheet,
@@ -74,7 +75,7 @@ export default function HomeScreen() {
               <Text style={styles.foodTitle}>Hamburger</Text>
               <Text style={styles.foodCat}>Burger</Text>
               <View style={styles.cardBottom}>
-                <Text style={styles.price}>Rs. 250.0</Text>
+                <Text style={styles.price}>$2.50</Text>
                 <TouchableOpacity style={styles.addBtn}>
                   <Ionicons name="add" size={18} color="#fff" />
                 </TouchableOpacity>
@@ -111,8 +112,7 @@ const styles = StyleSheet.create({
   },
   container: { 
     flex: 1, 
-    paddingLeft: 80, 
-    paddingRight: 40,
+    paddingHorizontal: Platform.OS === 'web' ? 40 : 20, // ওয়েবে ৪০ এবং মোবাইলে ২০ প্যাডিং থাকবে
     paddingTop: 40,
     width: '100%',
     position: 'relative'
@@ -149,8 +149,8 @@ const styles = StyleSheet.create({
   bottomNav: { 
     position: 'absolute', 
     bottom: 20, 
-    left: 80, 
-    right: 40, 
+    left: Platform.OS === 'web' ? 40 : 20, 
+    right: Platform.OS === 'web' ? 40 : 20, 
     height: 60, 
     backgroundColor: '#0066FF', 
     borderRadius: 30, 
