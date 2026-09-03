@@ -1,11 +1,7 @@
 import { Stack } from 'expo-router';
 
-export default function Layout() {
+export default function RootLayout() {
   return (
-    <Stack
-      screenOptions={{
-        headerShown: false, // এটি উপরের Expo Starter হেডারটি পুরোপুরি লুকিয়ে ফেলবে
-      }}
-    />
+    <Stack screenOptions={{ headerShown: false }} />
   );
 }
